@@ -113,11 +113,11 @@ main (int argc, char *argv[])
   }
   char type[10];
   memset(type, 0, 10);
-  strcpy(type, argv[1]);
+  strncpy(type, argv[1], sizeof(type) - 1);
 
   char member[40];
   memset(member, 0, 40);
-  strcpy(member, argv[2]);
+  strncpy(member, argv[2], sizeof(member) - 1);
   ret = check_member(type, member);
   return (!ret);
 }
